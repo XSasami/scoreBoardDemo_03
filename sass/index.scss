@@ -1,0 +1,192 @@
+@import './base.scss';
+@import '../css/icon/iconfont.css';
+
+/* 计分板样式 开始 */
+
+$scBHeight: 329px; // 计分板的高
+$scB_bgc: #ffb333; // 计分板主题颜色
+$set_bgc: #40A58C; // "设置分组界面"的背景色
+.scB {
+    padding: 6px;
+    border-radius: 10px;
+    background-color: $scB_bgc;
+    .scB_close {
+        @include setClose(#fff);
+    }
+    .scB_con {
+        width: 500px;
+        background-color: #fff;
+        border-radius: 7px;
+        position: relative;
+        .scB_tit {
+            width: 335px;
+            height: 70px;
+            background-color: $scB_bgc;
+            font: 34px 'KaiTi';
+            color: #fff;
+            transform: translate(-50%, -50%);
+            border-radius: 5px;
+            @include fontCenter(70px);
+        }
+        .scB_groups {
+            min-height: $scBHeight;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            counter-reset: xuliehao 0;
+            .scB_group {
+                border-radius: 7px;
+                width: 100px;
+                padding: 36px 0 8px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                flex: 1 0 auto;
+                &:nth-of-type(even) {
+                    background-image: linear-gradient(to bottom, #fff, #FDA0A0, #fff);
+                }
+                &:nth-of-type(odd) {
+                    background-image: linear-gradient(to bottom, #fff, #85F8FC, #fff);
+                }
+                .group_tit {
+                    height: 42px;
+                    line-height: 42px;
+                    &::before {
+                        content: counter(xuliehao);
+                        counter-increment: xuliehao;
+                    }
+                }
+                .group_subBtn {
+                    width: 23px;
+                    height: 23px;
+                    font-size: 23px;
+                    color: $scB_bgc;
+                }
+                .flag_ves {
+                    flex-grow: 1;
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding: 12px 25px 0;
+                    .flag_gray {
+                        width: 25px;
+                        height: 20px;
+                        border: 2px solid #ccc;
+                        margin-bottom: 10px;
+                    }
+                    span {
+                        @extend.flag_gray;
+                        border: 2px solid red;
+                    }
+                }
+                .score_dis {
+                    width: 50px;
+                    height: 28px;
+                    @include fontCenter(28px);
+                    flex: 0 0 auto;
+                }
+                .group_addBtn {
+                    width: 32px;
+                    height: 32px;
+                    background-color: $scB_bgc;
+                    color: #fff;
+                    font-size: 29px;
+                    @include fontCenter(26px);
+                    border-radius: 50%;
+                    flex: 0 0 auto;
+                }
+            }
+        }
+        .setG_btn {
+            width: 120px;
+            height: 36px;
+            background-color: $scB_bgc;
+            color: #fff;
+            border-radius: 5px;
+            bottom: 21px;
+            @include fontCenter(36px);
+        }
+    }
+    .scB_mask {
+        width: 100%;
+        height: $scBHeight;
+        position: absolute;
+        left: 0;
+        z-index: 99;
+        padding: 20px;
+        display: flex;
+        .setGroups {
+            flex: 1;
+            background-color: rgba(64, 165, 140, .8);
+            border-radius: 7px;
+            position: relative;
+            display: flex;
+            padding: 5px;
+            flex-direction: column;
+            .sgs_close {
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                color: #fff;
+            }
+            .sgs_tit {
+                width: 100%;
+                height: 50px;
+                @include fontCenter(50px);
+                color: #fff;
+            }
+            .sgs_con {
+                background-color: #fff;
+                flex: 1;
+                border-radius: 5px;
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                justify-content: space-between;
+                .sgs_beginBtn {
+                    width: 110px;
+                    height: 30px;
+                    background-color: $set_bgc;
+                    color: #fff;
+                    border-radius: 5px;
+                    font-size: 14px;
+                    margin-bottom: 20px;
+                    @include fontCenter(30px);
+                }
+                .sgs_show {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 60%;
+                    height: 50px;
+                    margin-top: 60px;
+                    @include fontCenter(47px);
+                    .set_count_box {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 45%;
+                        height: 47px;
+                        border-top: 1px solid #d4d4d4;
+                        border-bottom: 1px solid #d4d4d4;
+                        .sgs_subBtn,
+                        .sgs_addBtn {
+                            width: 30%;
+                            height: 45px;
+                            border-left: 1px solid #d4d4d4;
+                            border-right: 1px solid #d4d4d4;
+                            font-size: 23px;
+                            font-weight: bold;
+                            color: $set_bgc;
+                        }
+                        .count_dis {
+                            flex: 1;
+                            font-size: 25px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* 计分板样式 结束 */

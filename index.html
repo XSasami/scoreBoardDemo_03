@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0' , maximum-scale=1.0, minimum-scale=1.0>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>scoreBoard_v3.0</title>
+    <style>
+        body {
+            height: 1000px;
+        }
+
+        #scB_container {
+            width: 100%;
+            height: 1000px;
+            background-color: #E2D2D2;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <button onclick="scoreBoard()">点我</button>
+    <div id="scB_container"></div>
+    
+    <script src="./script/scoreBoard_3.0.js"></script>
+</body>
+
+</html>
+
+<script type="html/template" id="tpl">
+    <!-- 计分板 开始 -->
+    <div class="scB bc hide">
+        <!-- 计分板关闭按钮 -->
+        <span class="scB_close iconfont icon-close" onclick="scB_removeScB(this)"></span>
+        <!-- 遮罩层 设置分组 -->
+        <div class="scB_mask hide">
+            <div class="setGroups">
+                <div class="sgs_close iconfont icon-close" onclick="scB_hideEle(scB_mask)"></div>
+                <div class="sgs_tit">分&nbsp;&nbsp;&nbsp;组</div>
+                <div class="sgs_con">
+                    <span class="sgs_beginBtn" onclick="scB_sgsBeginGrouping()">开始分组</span>
+                    <div class="sgs_show">
+                        <p>将全班同学分为</p>
+                        <div class="set_count_box">
+                            <div class="sgs_subBtn" onclick="scB_sgsSetCounts(this)">-</div>
+                            <div class="count_dis">1</div>
+                            <div class="sgs_addBtn" onclick="scB_sgsSetCounts(this)">+</div>
+                        </div>
+                        <p>组</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 主要内容 -->
+        <div class="scB_con">
+            <div class="scB_tit hc">计分板</div>
+            <ul class="scB_groups">
+                <li class="scB_group hide">
+                    <h3 class="group_tit"> 组</h3>
+                    <div class="group_subBtn iconfont icon-jian-xianxingyuankuang" onclick="scB_subScore(this)"></div>
+                    <div class="flag_ves">
+                        <div class="flag_gray"></div>
+                    </div>
+                    <div class="score_dis">0</div>
+                    <div class="group_addBtn" onclick="scB_addScore(this)">+</div>
+                </li>
+            </ul>
+            <span class="setG_btn hc" onclick="scB_showEle(scB_mask)">立即分组</span>
+        </div>
+    </div>
+    <!-- 计分板 结束 -->
+</script>

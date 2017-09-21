@@ -1,0 +1,466 @@
+@charset "UTF-8";
+@import url(../css/icon/iconfont.css);
+html,
+body,
+a,
+b,
+i,
+u,
+strong,
+del,
+em,
+div,
+p,
+ul,
+li,
+ol,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+img,
+form,
+label,
+span {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+button,
+html input[type=button],
+input[type=submit] {
+  -webkit-apperance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+em,
+i,
+u {
+  font-style: normal;
+}
+
+/* 快速浮动 */
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+/* 快速对齐 */
+.al {
+  text-align: left;
+}
+
+.ac {
+  text-align: center;
+}
+
+.ar {
+  text-align: right;
+}
+
+/* 隐藏 */
+.hide {
+  display: none !important;
+}
+
+/* 清除浮动 */
+.clear,
+.clr {
+  display: block;
+  overflow: hidden;
+  clear: both;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+/* 超出隐藏 */
+.smt {
+  overflow: hidden;
+}
+
+/* 盒子居中 */
+.bc {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+/* 水平居中 */
+.hc {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+/* 垂直居中 */
+.vc {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+body {
+  font: 16px tahoma, arial, Microsoft YaHei, Hiragino Sans GB, sans-serif;
+  color: #666;
+  background: #fff;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #C81623;
+}
+
+/* 计分板样式 开始 */
+.scB {
+  padding: 6px;
+  border-radius: 10px;
+  background-color: #ffb333;
+}
+.scB .scB_close {
+  position: absolute;
+  right: -18px;
+  top: -20px;
+  font: normal bold 18px 'sans-serif';
+  color: #fff;
+  border-radius: 50%;
+  padding: 3px;
+  background-color: #ffb333;
+}
+.scB .scB_con {
+  width: 500px;
+  background-color: #fff;
+  border-radius: 7px;
+  position: relative;
+}
+.scB .scB_con .scB_tit {
+  width: 335px;
+  height: 70px;
+  background-color: #ffb333;
+  font: 34px 'KaiTi';
+  color: #fff;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 5px;
+  text-align: center;
+  line-height: 70px;
+}
+.scB .scB_con .scB_groups {
+  min-height: 329px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  counter-reset: xuliehao 0;
+}
+.scB .scB_con .scB_groups .scB_group {
+  border-radius: 7px;
+  width: 100px;
+  padding: 36px 0 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+.scB .scB_con .scB_groups .scB_group:nth-of-type(even) {
+  background-image: -webkit-linear-gradient(top, #fff, #FDA0A0, #fff);
+  background-image: linear-gradient(to bottom, #fff, #FDA0A0, #fff);
+}
+.scB .scB_con .scB_groups .scB_group:nth-of-type(odd) {
+  background-image: -webkit-linear-gradient(top, #fff, #85F8FC, #fff);
+  background-image: linear-gradient(to bottom, #fff, #85F8FC, #fff);
+}
+.scB .scB_con .scB_groups .scB_group .group_tit {
+  height: 42px;
+  line-height: 42px;
+}
+.scB .scB_con .scB_groups .scB_group .group_tit::before {
+  content: counter(xuliehao);
+  counter-increment: xuliehao;
+}
+.scB .scB_con .scB_groups .scB_group .group_subBtn {
+  width: 23px;
+  height: 23px;
+  font-size: 23px;
+  color: #ffb333;
+}
+.scB .scB_con .scB_groups .scB_group .flag_ves {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding: 12px 25px 0;
+}
+.scB .scB_con .scB_groups .scB_group .flag_ves .flag_gray, .scB .scB_con .scB_groups .scB_group .flag_ves span {
+  width: 25px;
+  height: 20px;
+  border: 2px solid #ccc;
+  margin-bottom: 10px;
+}
+.scB .scB_con .scB_groups .scB_group .flag_ves span {
+  border: 2px solid red;
+}
+.scB .scB_con .scB_groups .scB_group .score_dis {
+  width: 50px;
+  height: 28px;
+  text-align: center;
+  line-height: 28px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+.scB .scB_con .scB_groups .scB_group .group_addBtn {
+  width: 32px;
+  height: 32px;
+  background-color: #ffb333;
+  color: #fff;
+  font-size: 29px;
+  text-align: center;
+  line-height: 26px;
+  border-radius: 50%;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+.scB .scB_con .setG_btn {
+  width: 120px;
+  height: 36px;
+  background-color: #ffb333;
+  color: #fff;
+  border-radius: 5px;
+  bottom: 21px;
+  text-align: center;
+  line-height: 36px;
+}
+.scB .scB_mask {
+  width: 100%;
+  height: 329px;
+  position: absolute;
+  left: 0;
+  z-index: 99;
+  padding: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.scB .scB_mask .setGroups {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: rgba(64, 165, 140, 0.8);
+  border-radius: 7px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.scB .scB_mask .setGroups .sgs_close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #fff;
+}
+.scB .scB_mask .setGroups .sgs_tit {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+}
+.scB .scB_mask .setGroups .sgs_con {
+  background-color: #fff;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: column-reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.scB .scB_mask .setGroups .sgs_con .sgs_beginBtn {
+  width: 110px;
+  height: 30px;
+  background-color: #40A58C;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 30px;
+}
+.scB .scB_mask .setGroups .sgs_con .sgs_show {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 60%;
+  height: 50px;
+  margin-top: 60px;
+  text-align: center;
+  line-height: 47px;
+}
+.scB .scB_mask .setGroups .sgs_con .sgs_show .set_count_box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 45%;
+  height: 47px;
+  border-top: 1px solid #d4d4d4;
+  border-bottom: 1px solid #d4d4d4;
+}
+.scB .scB_mask .setGroups .sgs_con .sgs_show .set_count_box .sgs_subBtn,
+.scB .scB_mask .setGroups .sgs_con .sgs_show .set_count_box .sgs_addBtn {
+  width: 30%;
+  height: 45px;
+  border-left: 1px solid #d4d4d4;
+  border-right: 1px solid #d4d4d4;
+  font-size: 23px;
+  font-weight: bold;
+  color: #40A58C;
+}
+.scB .scB_mask .setGroups .sgs_con .sgs_show .set_count_box .count_dis {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* 计分板样式 结束 */

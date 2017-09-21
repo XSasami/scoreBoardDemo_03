@@ -1,0 +1,182 @@
+@charset "UTF-8";
+html,
+body,
+a,
+b,
+i,
+u,
+strong,
+del,
+em,
+div,
+p,
+ul,
+li,
+ol,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+img,
+form,
+label,
+span {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+button,
+html input[type=button],
+input[type=submit] {
+  -webkit-apperance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+em,
+i,
+u {
+  font-style: normal;
+}
+
+/* 快速浮动 */
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+/* 快速对齐 */
+.al {
+  text-align: left;
+}
+
+.ac {
+  text-align: center;
+}
+
+.ar {
+  text-align: right;
+}
+
+/* 隐藏 */
+.hide {
+  display: none !important;
+}
+
+/* 清除浮动 */
+.clear,
+.clr {
+  display: block;
+  overflow: hidden;
+  clear: both;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+/* 超出隐藏 */
+.smt {
+  overflow: hidden;
+}
+
+/* 盒子居中 */
+.bc {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+/* 水平居中 */
+.hc {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+/* 垂直居中 */
+.vc {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+body {
+  font: 16px tahoma, arial, Microsoft YaHei, Hiragino Sans GB, sans-serif;
+  color: #666;
+  background: #fff;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #C81623;
+}
