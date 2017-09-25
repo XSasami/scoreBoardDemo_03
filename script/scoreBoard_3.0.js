@@ -102,10 +102,10 @@
 
       // 判断所有分组的总宽度是否超出计分板内容scB_con的宽度，若是，则把scB_con宽度改为 auto
       /**
-       * 这里有个坑，由于offsetWidth会把结果四舍五入，
-       * 所以当我们生成3个分组时，每个分组宽为166.67，四舍五入后结果为167，
+       * 由于offsetWidth会把结果四舍五入，
+       * 所以当生成3个分组时，每个分组宽为166.67，四舍五入后结果为167，
        * 因此分组总宽度为501大于scB_con的宽度500，这时候把width改为 auto 就会有问题。
-       * 因为offsetWidth已经取整了，我们无法再做取整操作，因此 -1 。
+       * 因为offsetWidth已经取整了，无法再做取整操作，因此 -1 。
        * 
        * 当然，用组数作为判断条件也是可以的，大于五组就把宽度改为auto，
        * 只是不灵活，如果以后scB_con的宽度能容纳六组呢？
@@ -135,7 +135,9 @@
         e.target.parentNode.score++;
         e.target.previousElementSibling.innerHTML = e.target.parentNode.score;
         // 添加红旗
-        e.target.parentNode.children[2].appendChild(document.createElement("span"));
+        var span = document.createElement("span");
+        span.innerHTML = '😍';
+        e.target.parentNode.children[2].appendChild(span);
       } else if (e.target.className.indexOf('group_subBtn') != -1) {
         // 为了保证分数的独立性，通过自定义属性把分数绑到各自的分组（li）上
         if (!e.target.parentNode.score) {
@@ -218,7 +220,7 @@
             <h3 class="group_tit"> 组</h3>
             <div class="group_subBtn iconfont icon-jian-xianxingyuankuang"></div>
             <div class="flag_ves">
-            <div class="flag_gray"></div>
+            <div class="flag_gray">🙄</div>
             </div>
             <div class="score_dis">0</div>
             <div class="group_addBtn">+</div>
@@ -246,7 +248,8 @@
     };
   }
 
-  function scoreBoard() {
+  // 主要逻辑代码
+  function main() {
     // 获取要操作的元素
     var eleObj = createScB();
 
@@ -254,36 +257,43 @@
     var s = new ScoreBoard(eleObj);
 
     // 注册点击事件
+    // "立即分组"按钮
     s.setG_btn.addEventListener("click", function () {
       s.scB_showEle(s.scB_mask);
     });
     s.setG_btn.addEventListener("mousedown", s.scB_stopBubble);
 
+    // "关闭分组设置"按钮
     s.sgs_close.addEventListener("click", function () {
       s.scB_hideEle(s.scB_mask);
     });
     s.sgs_close.addEventListener("mousedown", s.scB_stopBubble);
 
+    // "删除计分板"按钮
     s.scB_close.addEventListener("click", function () {
       s.scB_removeScB(s.scB);
     });
     s.scB_close.addEventListener("mousedown", s.scB_stopBubble);
 
+    // "减少分组"按钮
     s.sgs_subBtn.addEventListener("click", function () {
       s.scB_sgsSubCounts();
     });
     s.sgs_subBtn.addEventListener("mousedown", s.scB_stopBubble);
 
+    // "增加分组"按钮
     s.sgs_addBtn.addEventListener("click", function () {
       s.scB_sgsAddCounts();
     });
     s.sgs_addBtn.addEventListener("mousedown", s.scB_stopBubble);
 
+    // "开始分组"按钮
     s.sgs_beginBtn.addEventListener("click", function () {
       s.scB_sgsBeginGrouping();
     });
     s.sgs_beginBtn.addEventListener("mousedown", s.scB_stopBubble);
 
+    // 事件委托---得分失分的操作
     s.scB_groups.addEventListener('click', s.scB_setScore)
 
     // -----------------拖动计分板-----------------
@@ -298,5 +308,5 @@
     });
   }
 
-  window.scoreBoard = scoreBoard;
+  window.scoreBoard = main;
 })(window);

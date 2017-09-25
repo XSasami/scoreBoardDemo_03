@@ -70,12 +70,11 @@ $set_bgc: #40A58C; // "设置分组界面"的背景色
                     .flag_gray {
                         width: 25px;
                         height: 20px;
-                        border: 2px solid #ccc;
+                        @include fontCenter(20px);
                         margin-bottom: 10px;
                     }
                     span {
                         @extend.flag_gray;
-                        border: 2px solid red;
                     }
                 }
                 .score_dis {
